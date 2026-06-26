@@ -1,9 +1,15 @@
+import { create } from "../controllers/tickets/create.js";
+import { index } from "../controllers/tickets/index.js";
+
 export const tickets = [
     {
         method: "POST",
         path: "/tickets",
-        controller: (req, res) => {
-            res.end(JSON.stringify({ message: "Ticket criado com sucesso" }));
-        }
+        controller: create,
+    },
+    {
+        method: "GET",
+        path: "/tickets",
+        controller: index,
     }
 ]
